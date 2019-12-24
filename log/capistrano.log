@@ -100,3 +100,578 @@
   INFO ---------------------------------------------------------------------------
   INFO [2bf6b636] Running /usr/bin/env mkdir -p /tmp as capistrano@172.16.175.126
  DEBUG [2bf6b636] Command: /usr/bin/env mkdir -p /tmp
+  INFO ---------------------------------------------------------------------------
+  INFO START 2019-12-18 20:47:49 +0000 cap production deploy
+  INFO ---------------------------------------------------------------------------
+  INFO [a460025a] Running /usr/bin/env mkdir -p /tmp as capistrano@172.16.175.126
+ DEBUG [a460025a] Command: /usr/bin/env mkdir -p /tmp
+  INFO ---------------------------------------------------------------------------
+  INFO START 2019-12-18 20:48:55 +0000 cap production deploy
+  INFO ---------------------------------------------------------------------------
+  INFO [bf304b46] Running /usr/bin/env mkdir -p /tmp as capistrano@172.16.175.45
+ DEBUG [bf304b46] Command: /usr/bin/env mkdir -p /tmp
+  INFO [bf304b46] Finished in 0.755 seconds with exit status 0 (successful).
+ DEBUG Uploading /tmp/git-ssh-hello-world-production-root.sh 0.0%
+  INFO Uploading /tmp/git-ssh-hello-world-production-root.sh 100.0%
+  INFO [7855adff] Running /usr/bin/env chmod 700 /tmp/git-ssh-hello-world-production-root.sh as capistrano@172.16.175.45
+ DEBUG [7855adff] Command: /usr/bin/env chmod 700 /tmp/git-ssh-hello-world-production-root.sh
+  INFO [7855adff] Finished in 0.046 seconds with exit status 0 (successful).
+  INFO [024afaea] Running /usr/bin/env git ls-remote git@github.com:grogowar/hello-world.git HEAD as capistrano@172.16.175.45
+ DEBUG [024afaea] Command: ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-hello-world-production-root.sh" ; /usr/bin/env git ls-remote git@github.com:grogowar/hello-world.git HEAD )
+ DEBUG [024afaea] 	9c44f390995d1a44d2bb1701e6457e37627ea158	HEAD
+  INFO [024afaea] Finished in 2.236 seconds with exit status 0 (successful).
+  INFO [a26aa181] Running /usr/bin/env mkdir -p /var/www/hello-world/shared /var/www/hello-world/releases as capistrano@172.16.175.45
+ DEBUG [a26aa181] Command: /usr/bin/env mkdir -p /var/www/hello-world/shared /var/www/hello-world/releases
+  INFO [a26aa181] Finished in 0.005 seconds with exit status 0 (successful).
+ DEBUG [54130977] Running [ -f /var/www/hello-world/current/REVISION ] as capistrano@172.16.175.45
+ DEBUG [54130977] Command: [ -f /var/www/hello-world/current/REVISION ]
+ DEBUG [54130977] Finished in 0.047 seconds with exit status 1 (failed).
+ DEBUG [16b3e54f] Running [ -f /var/www/hello-world/repo/HEAD ] as capistrano@172.16.175.45
+ DEBUG [16b3e54f] Command: [ -f /var/www/hello-world/repo/HEAD ]
+ DEBUG [16b3e54f] Finished in 0.047 seconds with exit status 1 (failed).
+ DEBUG [242e5587] Running if test ! -d /var/www/hello-world; then echo "Directory does not exist '/var/www/hello-world'" 1>&2; false; fi as capistrano@172.16.175.45
+ DEBUG [242e5587] Command: if test ! -d /var/www/hello-world; then echo "Directory does not exist '/var/www/hello-world'" 1>&2; false; fi
+ DEBUG [242e5587] Finished in 0.044 seconds with exit status 0 (successful).
+  INFO [06f0f717] Running /usr/bin/env git clone --mirror git@github.com:grogowar/hello-world.git /var/www/hello-world/repo as capistrano@172.16.175.45
+ DEBUG [06f0f717] Command: cd /var/www/hello-world && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-hello-world-production-root.sh" ; /usr/bin/env git clone --mirror git@github.com:grogowar/hello-world.git /var/www/hello-world/repo )
+ DEBUG [06f0f717] 	Cloning into bare repository '/var/www/hello-world/repo'...
+  INFO [06f0f717] Finished in 1.560 seconds with exit status 0 (successful).
+ DEBUG [abf33bc5] Running if test ! -d /var/www/hello-world/repo; then echo "Directory does not exist '/var/www/hello-world/repo'" 1>&2; false; fi as capistrano@172.16.175.45
+ DEBUG [abf33bc5] Command: if test ! -d /var/www/hello-world/repo; then echo "Directory does not exist '/var/www/hello-world/repo'" 1>&2; false; fi
+ DEBUG [abf33bc5] Finished in 0.003 seconds with exit status 0 (successful).
+  INFO [48ca8e1e] Running /usr/bin/env git remote set-url origin git@github.com:grogowar/hello-world.git as capistrano@172.16.175.45
+ DEBUG [48ca8e1e] Command: cd /var/www/hello-world/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-hello-world-production-root.sh" ; /usr/bin/env git remote set-url origin git@github.com:grogowar/hello-world.git )
+  INFO [48ca8e1e] Finished in 0.048 seconds with exit status 0 (successful).
+  INFO [a1da1e3d] Running /usr/bin/env git remote update --prune as capistrano@172.16.175.45
+ DEBUG [a1da1e3d] Command: cd /var/www/hello-world/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-hello-world-production-root.sh" ; /usr/bin/env git remote update --prune )
+ DEBUG [a1da1e3d] 	Fetching origin
+  INFO [a1da1e3d] Finished in 1.395 seconds with exit status 0 (successful).
+ DEBUG [a29ca05e] Running if test ! -d /var/www/hello-world/repo; then echo "Directory does not exist '/var/www/hello-world/repo'" 1>&2; false; fi as capistrano@172.16.175.45
+ DEBUG [a29ca05e] Command: if test ! -d /var/www/hello-world/repo; then echo "Directory does not exist '/var/www/hello-world/repo'" 1>&2; false; fi
+ DEBUG [a29ca05e] Finished in 0.003 seconds with exit status 0 (successful).
+  INFO [e440028f] Running /usr/bin/env mkdir -p /var/www/hello-world/releases/20191218204858 as capistrano@172.16.175.45
+ DEBUG [e440028f] Command: cd /var/www/hello-world/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-hello-world-production-root.sh" ; /usr/bin/env mkdir -p /var/www/hello-world/releases/20191218204858 )
+  INFO [e440028f] Finished in 0.046 seconds with exit status 0 (successful).
+  INFO [1f24602f] Running /usr/bin/env git archive master | /usr/bin/env tar -x -f - -C /var/www/hello-world/releases/20191218204858 as capistrano@172.16.175.45
+ DEBUG [1f24602f] Command: cd /var/www/hello-world/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-hello-world-production-root.sh" ; /usr/bin/env git archive master | /usr/bin/env tar -x -f - -C /var/www/hello-world/releases/20191218204858 )
+  INFO [1f24602f] Finished in 0.051 seconds with exit status 0 (successful).
+ DEBUG [1444fcfe] Running if test ! -d /var/www/hello-world/repo; then echo "Directory does not exist '/var/www/hello-world/repo'" 1>&2; false; fi as capistrano@172.16.175.45
+ DEBUG [1444fcfe] Command: if test ! -d /var/www/hello-world/repo; then echo "Directory does not exist '/var/www/hello-world/repo'" 1>&2; false; fi
+ DEBUG [1444fcfe] Finished in 0.046 seconds with exit status 0 (successful).
+ DEBUG [ad741dfd] Running /usr/bin/env git rev-list --max-count=1 master as capistrano@172.16.175.45
+ DEBUG [ad741dfd] Command: cd /var/www/hello-world/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-hello-world-production-root.sh" ; /usr/bin/env git rev-list --max-count=1 master )
+ DEBUG [ad741dfd] 	9c44f390995d1a44d2bb1701e6457e37627ea158
+ DEBUG [ad741dfd] Finished in 0.046 seconds with exit status 0 (successful).
+ DEBUG [6f18f0a7] Running if test ! -d /var/www/hello-world/releases/20191218204858; then echo "Directory does not exist '/var/www/hello-world/releases/20191218204858'" 1>&2; false; fi as capistrano@172.16.175.45
+ DEBUG [6f18f0a7] Command: if test ! -d /var/www/hello-world/releases/20191218204858; then echo "Directory does not exist '/var/www/hello-world/releases/20191218204858'" 1>&2; false; fi
+ DEBUG [6f18f0a7] Finished in 0.045 seconds with exit status 0 (successful).
+  INFO [91a13b48] Running /usr/bin/env echo "9c44f390995d1a44d2bb1701e6457e37627ea158" > REVISION as capistrano@172.16.175.45
+ DEBUG [91a13b48] Command: cd /var/www/hello-world/releases/20191218204858 && /usr/bin/env echo "9c44f390995d1a44d2bb1701e6457e37627ea158" > REVISION
+  INFO [91a13b48] Finished in 0.069 seconds with exit status 0 (successful).
+  INFO [bab7a283] Running /usr/bin/env ln -s /var/www/hello-world/releases/20191218204858 /var/www/hello-world/releases/current as capistrano@172.16.175.45
+ DEBUG [bab7a283] Command: /usr/bin/env ln -s /var/www/hello-world/releases/20191218204858 /var/www/hello-world/releases/current
+  INFO [bab7a283] Finished in 0.046 seconds with exit status 0 (successful).
+  INFO [cf78d01e] Running /usr/bin/env mv /var/www/hello-world/releases/current /var/www/hello-world as capistrano@172.16.175.45
+ DEBUG [cf78d01e] Command: /usr/bin/env mv /var/www/hello-world/releases/current /var/www/hello-world
+  INFO [cf78d01e] Finished in 0.047 seconds with exit status 0 (successful).
+ DEBUG [9fa641be] Running /usr/bin/env ls -x /var/www/hello-world/releases as capistrano@172.16.175.45
+ DEBUG [9fa641be] Command: /usr/bin/env ls -x /var/www/hello-world/releases
+ DEBUG [9fa641be] 	20191218204858
+ DEBUG [9fa641be] Finished in 0.047 seconds with exit status 0 (successful).
+ DEBUG [85438ed4] Running if test ! -d /var/www/hello-world/releases; then echo "Directory does not exist '/var/www/hello-world/releases'" 1>&2; false; fi as capistrano@172.16.175.45
+ DEBUG [85438ed4] Command: if test ! -d /var/www/hello-world/releases; then echo "Directory does not exist '/var/www/hello-world/releases'" 1>&2; false; fi
+ DEBUG [85438ed4] Finished in 0.046 seconds with exit status 0 (successful).
+  INFO [9ed814a1] Running /usr/bin/env echo "Branch master (at 9c44f390995d1a44d2bb1701e6457e37627ea158) deployed as release 20191218204858 by root" >> /var/www/hello-world/revisions.log as capistrano@172.16.175.45
+ DEBUG [9ed814a1] Command: cd /var/www/hello-world/releases && /usr/bin/env echo "Branch master (at 9c44f390995d1a44d2bb1701e6457e37627ea158) deployed as release 20191218204858 by root" >> /var/www/hello-world/revisions.log
+  INFO [9ed814a1] Finished in 0.046 seconds with exit status 0 (successful).
+  INFO ---------------------------------------------------------------------------
+  INFO START 2019-12-18 21:17:44 +0000 cap production deploy
+  INFO ---------------------------------------------------------------------------
+  INFO [6ef27e1e] Running /usr/bin/env mkdir -p /tmp as capistrano@172.16.175.45
+ DEBUG [6ef27e1e] Command: /usr/bin/env mkdir -p /tmp
+  INFO ---------------------------------------------------------------------------
+  INFO START 2019-12-18 21:29:45 +0000 cap production deploy
+  INFO ---------------------------------------------------------------------------
+  INFO [d46594db] Running /usr/bin/env mkdir -p /tmp as capistrano@172.16.175.45
+ DEBUG [d46594db] Command: /usr/bin/env mkdir -p /tmp
+  INFO [d46594db] Finished in 0.726 seconds with exit status 0 (successful).
+ DEBUG Uploading /tmp/git-ssh-hello-world-production-root.sh 0.0%
+  INFO Uploading /tmp/git-ssh-hello-world-production-root.sh 100.0%
+  INFO [662435cf] Running /usr/bin/env chmod 700 /tmp/git-ssh-hello-world-production-root.sh as capistrano@172.16.175.45
+ DEBUG [662435cf] Command: /usr/bin/env chmod 700 /tmp/git-ssh-hello-world-production-root.sh
+  INFO [662435cf] Finished in 0.047 seconds with exit status 0 (successful).
+  INFO [2c0fa3e3] Running /usr/bin/env git ls-remote git@github.com:grogowar/hello-world.git HEAD as capistrano@172.16.175.45
+ DEBUG [2c0fa3e3] Command: ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-hello-world-production-root.sh" ; /usr/bin/env git ls-remote git@github.com:grogowar/hello-world.git HEAD )
+ DEBUG [2c0fa3e3] 	Warning: Permanently added the RSA host key for IP address '140.82.118.4' to the list of known hosts.
+ DEBUG [2c0fa3e3] 	9c44f390995d1a44d2bb1701e6457e37627ea158	HEAD
+  INFO [2c0fa3e3] Finished in 1.370 seconds with exit status 0 (successful).
+  INFO [71dcb657] Running /usr/bin/env mkdir -p /var/www/hello-world/shared /var/www/hello-world/releases as capistrano@172.16.175.45
+ DEBUG [71dcb657] Command: /usr/bin/env mkdir -p /var/www/hello-world/shared /var/www/hello-world/releases
+  INFO [71dcb657] Finished in 0.005 seconds with exit status 0 (successful).
+ DEBUG [d7aae429] Running [ -f /var/www/hello-world/current/REVISION ] as capistrano@172.16.175.45
+ DEBUG [d7aae429] Command: [ -f /var/www/hello-world/current/REVISION ]
+ DEBUG [d7aae429] Finished in 0.044 seconds with exit status 1 (failed).
+ DEBUG [3d570c2e] Running [ -f /var/www/hello-world/repo/HEAD ] as capistrano@172.16.175.45
+ DEBUG [3d570c2e] Command: [ -f /var/www/hello-world/repo/HEAD ]
+ DEBUG [3d570c2e] Finished in 0.043 seconds with exit status 1 (failed).
+ DEBUG [9d127c6d] Running if test ! -d /var/www/hello-world; then echo "Directory does not exist '/var/www/hello-world'" 1>&2; false; fi as capistrano@172.16.175.45
+ DEBUG [9d127c6d] Command: if test ! -d /var/www/hello-world; then echo "Directory does not exist '/var/www/hello-world'" 1>&2; false; fi
+ DEBUG [9d127c6d] Finished in 0.043 seconds with exit status 0 (successful).
+  INFO [4ccb61e2] Running /usr/bin/env git clone --mirror git@github.com:grogowar/hello-world.git /var/www/hello-world/repo as capistrano@172.16.175.45
+ DEBUG [4ccb61e2] Command: cd /var/www/hello-world && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-hello-world-production-root.sh" ; /usr/bin/env git clone --mirror git@github.com:grogowar/hello-world.git /var/www/hello-world/repo )
+ DEBUG [4ccb61e2] 	Cloning into bare repository '/var/www/hello-world/repo'...
+  INFO [4ccb61e2] Finished in 1.453 seconds with exit status 0 (successful).
+ DEBUG [252ba562] Running if test ! -d /var/www/hello-world/repo; then echo "Directory does not exist '/var/www/hello-world/repo'" 1>&2; false; fi as capistrano@172.16.175.45
+ DEBUG [252ba562] Command: if test ! -d /var/www/hello-world/repo; then echo "Directory does not exist '/var/www/hello-world/repo'" 1>&2; false; fi
+ DEBUG [252ba562] Finished in 0.003 seconds with exit status 0 (successful).
+  INFO [4b33b79d] Running /usr/bin/env git remote set-url origin git@github.com:grogowar/hello-world.git as capistrano@172.16.175.45
+ DEBUG [4b33b79d] Command: cd /var/www/hello-world/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-hello-world-production-root.sh" ; /usr/bin/env git remote set-url origin git@github.com:grogowar/hello-world.git )
+  INFO [4b33b79d] Finished in 0.048 seconds with exit status 0 (successful).
+  INFO [dd2305c5] Running /usr/bin/env git remote update --prune as capistrano@172.16.175.45
+ DEBUG [dd2305c5] Command: cd /var/www/hello-world/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-hello-world-production-root.sh" ; /usr/bin/env git remote update --prune )
+ DEBUG [dd2305c5] 	Fetching origin
+  INFO [dd2305c5] Finished in 1.351 seconds with exit status 0 (successful).
+ DEBUG [26d87bb6] Running if test ! -d /var/www/hello-world/repo; then echo "Directory does not exist '/var/www/hello-world/repo'" 1>&2; false; fi as capistrano@172.16.175.45
+ DEBUG [26d87bb6] Command: if test ! -d /var/www/hello-world/repo; then echo "Directory does not exist '/var/www/hello-world/repo'" 1>&2; false; fi
+ DEBUG [26d87bb6] Finished in 0.003 seconds with exit status 0 (successful).
+  INFO [594b15c6] Running /usr/bin/env mkdir -p /var/www/hello-world/releases/20191218212947 as capistrano@172.16.175.45
+ DEBUG [594b15c6] Command: cd /var/www/hello-world/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-hello-world-production-root.sh" ; /usr/bin/env mkdir -p /var/www/hello-world/releases/20191218212947 )
+  INFO [594b15c6] Finished in 0.046 seconds with exit status 0 (successful).
+  INFO [0928c1a0] Running /usr/bin/env git archive master | /usr/bin/env tar -x -f - -C /var/www/hello-world/releases/20191218212947 as capistrano@172.16.175.45
+ DEBUG [0928c1a0] Command: cd /var/www/hello-world/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-hello-world-production-root.sh" ; /usr/bin/env git archive master | /usr/bin/env tar -x -f - -C /var/www/hello-world/releases/20191218212947 )
+  INFO [0928c1a0] Finished in 0.050 seconds with exit status 0 (successful).
+ DEBUG [fbe7bfe4] Running if test ! -d /var/www/hello-world/repo; then echo "Directory does not exist '/var/www/hello-world/repo'" 1>&2; false; fi as capistrano@172.16.175.45
+ DEBUG [fbe7bfe4] Command: if test ! -d /var/www/hello-world/repo; then echo "Directory does not exist '/var/www/hello-world/repo'" 1>&2; false; fi
+ DEBUG [fbe7bfe4] Finished in 0.046 seconds with exit status 0 (successful).
+ DEBUG [6c8a820e] Running /usr/bin/env git rev-list --max-count=1 master as capistrano@172.16.175.45
+ DEBUG [6c8a820e] Command: cd /var/www/hello-world/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-hello-world-production-root.sh" ; /usr/bin/env git rev-list --max-count=1 master )
+ DEBUG [6c8a820e] 	9c44f390995d1a44d2bb1701e6457e37627ea158
+ DEBUG [6c8a820e] Finished in 0.050 seconds with exit status 0 (successful).
+ DEBUG [2c0cdaa9] Running if test ! -d /var/www/hello-world/releases/20191218212947; then echo "Directory does not exist '/var/www/hello-world/releases/20191218212947'" 1>&2; false; fi as capistrano@172.16.175.45
+ DEBUG [2c0cdaa9] Command: if test ! -d /var/www/hello-world/releases/20191218212947; then echo "Directory does not exist '/var/www/hello-world/releases/20191218212947'" 1>&2; false; fi
+ DEBUG [2c0cdaa9] Finished in 0.045 seconds with exit status 0 (successful).
+  INFO [67fe8e45] Running /usr/bin/env echo "9c44f390995d1a44d2bb1701e6457e37627ea158" > REVISION as capistrano@172.16.175.45
+ DEBUG [67fe8e45] Command: cd /var/www/hello-world/releases/20191218212947 && /usr/bin/env echo "9c44f390995d1a44d2bb1701e6457e37627ea158" > REVISION
+  INFO [67fe8e45] Finished in 0.045 seconds with exit status 0 (successful).
+  INFO [51ef9bae] Running /usr/bin/env ln -s /var/www/hello-world/releases/20191218212947 /var/www/hello-world/releases/current as capistrano@172.16.175.45
+ DEBUG [51ef9bae] Command: /usr/bin/env ln -s /var/www/hello-world/releases/20191218212947 /var/www/hello-world/releases/current
+  INFO [51ef9bae] Finished in 0.045 seconds with exit status 0 (successful).
+  INFO [aa20920f] Running /usr/bin/env mv /var/www/hello-world/releases/current /var/www/hello-world as capistrano@172.16.175.45
+ DEBUG [aa20920f] Command: /usr/bin/env mv /var/www/hello-world/releases/current /var/www/hello-world
+  INFO [aa20920f] Finished in 0.047 seconds with exit status 0 (successful).
+ DEBUG [78e3bdab] Running /usr/bin/env ls -x /var/www/hello-world/releases as capistrano@172.16.175.45
+ DEBUG [78e3bdab] Command: /usr/bin/env ls -x /var/www/hello-world/releases
+ DEBUG [78e3bdab] 	20191218212947
+ DEBUG [78e3bdab] Finished in 0.047 seconds with exit status 0 (successful).
+ DEBUG [a0f310dd] Running if test ! -d /var/www/hello-world/releases; then echo "Directory does not exist '/var/www/hello-world/releases'" 1>&2; false; fi as capistrano@172.16.175.45
+ DEBUG [a0f310dd] Command: if test ! -d /var/www/hello-world/releases; then echo "Directory does not exist '/var/www/hello-world/releases'" 1>&2; false; fi
+ DEBUG [a0f310dd] Finished in 0.046 seconds with exit status 0 (successful).
+  INFO [3de70bc7] Running /usr/bin/env echo "Branch master (at 9c44f390995d1a44d2bb1701e6457e37627ea158) deployed as release 20191218212947 by root" >> /var/www/hello-world/revisions.log as capistrano@172.16.175.45
+ DEBUG [3de70bc7] Command: cd /var/www/hello-world/releases && /usr/bin/env echo "Branch master (at 9c44f390995d1a44d2bb1701e6457e37627ea158) deployed as release 20191218212947 by root" >> /var/www/hello-world/revisions.log
+  INFO [3de70bc7] Finished in 0.044 seconds with exit status 0 (successful).
+  INFO ---------------------------------------------------------------------------
+  INFO START 2019-12-18 21:30:23 +0000 cap production deploy
+  INFO ---------------------------------------------------------------------------
+  INFO [75a31080] Running /usr/bin/env mkdir -p /tmp as capistrano@172.16.175.45
+ DEBUG [75a31080] Command: /usr/bin/env mkdir -p /tmp
+  INFO [75a31080] Finished in 0.722 seconds with exit status 0 (successful).
+ DEBUG Uploading /tmp/git-ssh-hello-world-production-root.sh 0.0%
+  INFO Uploading /tmp/git-ssh-hello-world-production-root.sh 100.0%
+  INFO [44513e17] Running /usr/bin/env chmod 700 /tmp/git-ssh-hello-world-production-root.sh as capistrano@172.16.175.45
+ DEBUG [44513e17] Command: /usr/bin/env chmod 700 /tmp/git-ssh-hello-world-production-root.sh
+  INFO [44513e17] Finished in 0.046 seconds with exit status 0 (successful).
+  INFO [b85d3b1f] Running /usr/bin/env git ls-remote git@github.com:grogowar/hello-world.git HEAD as capistrano@172.16.175.45
+ DEBUG [b85d3b1f] Command: ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-hello-world-production-root.sh" ; /usr/bin/env git ls-remote git@github.com:grogowar/hello-world.git HEAD )
+ DEBUG [b85d3b1f] 	9c44f390995d1a44d2bb1701e6457e37627ea158	HEAD
+  INFO [b85d3b1f] Finished in 1.351 seconds with exit status 0 (successful).
+  INFO [99d468be] Running /usr/bin/env mkdir -p /var/www/hello-world/shared /var/www/hello-world/releases as capistrano@172.16.175.45
+ DEBUG [99d468be] Command: /usr/bin/env mkdir -p /var/www/hello-world/shared /var/www/hello-world/releases
+  INFO [99d468be] Finished in 0.005 seconds with exit status 0 (successful).
+ DEBUG [7c10e154] Running [ -f /var/www/hello-world/current/REVISION ] as capistrano@172.16.175.45
+ DEBUG [7c10e154] Command: [ -f /var/www/hello-world/current/REVISION ]
+ DEBUG [7c10e154] Finished in 0.046 seconds with exit status 0 (successful).
+ DEBUG [598e68a1] Running /usr/bin/env cat /var/www/hello-world/current/REVISION 2>/dev/null as capistrano@172.16.175.45
+ DEBUG [598e68a1] Command: /usr/bin/env cat /var/www/hello-world/current/REVISION 2>/dev/null
+ DEBUG [598e68a1] 	9c44f390995d1a44d2bb1701e6457e37627ea158
+ DEBUG [598e68a1] Finished in 0.049 seconds with exit status 0 (successful).
+ DEBUG [59afafe6] Running [ -f /var/www/hello-world/repo/HEAD ] as capistrano@172.16.175.45
+ DEBUG [59afafe6] Command: [ -f /var/www/hello-world/repo/HEAD ]
+ DEBUG [59afafe6] Finished in 0.048 seconds with exit status 0 (successful).
+  INFO The repository mirror is at /var/www/hello-world/repo
+ DEBUG [83b42548] Running if test ! -d /var/www/hello-world/repo; then echo "Directory does not exist '/var/www/hello-world/repo'" 1>&2; false; fi as capistrano@172.16.175.45
+ DEBUG [83b42548] Command: if test ! -d /var/www/hello-world/repo; then echo "Directory does not exist '/var/www/hello-world/repo'" 1>&2; false; fi
+ DEBUG [83b42548] Finished in 0.045 seconds with exit status 0 (successful).
+  INFO [4dfddab6] Running /usr/bin/env git remote set-url origin git@github.com:grogowar/hello-world.git as capistrano@172.16.175.45
+ DEBUG [4dfddab6] Command: cd /var/www/hello-world/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-hello-world-production-root.sh" ; /usr/bin/env git remote set-url origin git@github.com:grogowar/hello-world.git )
+  INFO [4dfddab6] Finished in 0.049 seconds with exit status 0 (successful).
+  INFO [787057d4] Running /usr/bin/env git remote update --prune as capistrano@172.16.175.45
+ DEBUG [787057d4] Command: cd /var/www/hello-world/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-hello-world-production-root.sh" ; /usr/bin/env git remote update --prune )
+ DEBUG [787057d4] 	Fetching origin
+  INFO [787057d4] Finished in 1.366 seconds with exit status 0 (successful).
+ DEBUG [d6085d2b] Running if test ! -d /var/www/hello-world/repo; then echo "Directory does not exist '/var/www/hello-world/repo'" 1>&2; false; fi as capistrano@172.16.175.45
+ DEBUG [d6085d2b] Command: if test ! -d /var/www/hello-world/repo; then echo "Directory does not exist '/var/www/hello-world/repo'" 1>&2; false; fi
+ DEBUG [d6085d2b] Finished in 0.003 seconds with exit status 0 (successful).
+  INFO [86108b01] Running /usr/bin/env mkdir -p /var/www/hello-world/releases/20191218213025 as capistrano@172.16.175.45
+ DEBUG [86108b01] Command: cd /var/www/hello-world/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-hello-world-production-root.sh" ; /usr/bin/env mkdir -p /var/www/hello-world/releases/20191218213025 )
+  INFO [86108b01] Finished in 0.047 seconds with exit status 0 (successful).
+  INFO [b4aee9fb] Running /usr/bin/env git archive master | /usr/bin/env tar -x -f - -C /var/www/hello-world/releases/20191218213025 as capistrano@172.16.175.45
+ DEBUG [b4aee9fb] Command: cd /var/www/hello-world/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-hello-world-production-root.sh" ; /usr/bin/env git archive master | /usr/bin/env tar -x -f - -C /var/www/hello-world/releases/20191218213025 )
+  INFO [b4aee9fb] Finished in 0.050 seconds with exit status 0 (successful).
+ DEBUG [d7d3cdd0] Running if test ! -d /var/www/hello-world/repo; then echo "Directory does not exist '/var/www/hello-world/repo'" 1>&2; false; fi as capistrano@172.16.175.45
+ DEBUG [d7d3cdd0] Command: if test ! -d /var/www/hello-world/repo; then echo "Directory does not exist '/var/www/hello-world/repo'" 1>&2; false; fi
+ DEBUG [d7d3cdd0] Finished in 0.045 seconds with exit status 0 (successful).
+ DEBUG [c8d208b3] Running /usr/bin/env git rev-list --max-count=1 master as capistrano@172.16.175.45
+ DEBUG [c8d208b3] Command: cd /var/www/hello-world/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-hello-world-production-root.sh" ; /usr/bin/env git rev-list --max-count=1 master )
+ DEBUG [c8d208b3] 	9c44f390995d1a44d2bb1701e6457e37627ea158
+ DEBUG [c8d208b3] Finished in 0.046 seconds with exit status 0 (successful).
+ DEBUG [87234495] Running if test ! -d /var/www/hello-world/releases/20191218213025; then echo "Directory does not exist '/var/www/hello-world/releases/20191218213025'" 1>&2; false; fi as capistrano@172.16.175.45
+ DEBUG [87234495] Command: if test ! -d /var/www/hello-world/releases/20191218213025; then echo "Directory does not exist '/var/www/hello-world/releases/20191218213025'" 1>&2; false; fi
+ DEBUG [87234495] Finished in 0.044 seconds with exit status 0 (successful).
+  INFO [3e277a63] Running /usr/bin/env echo "9c44f390995d1a44d2bb1701e6457e37627ea158" > REVISION as capistrano@172.16.175.45
+ DEBUG [3e277a63] Command: cd /var/www/hello-world/releases/20191218213025 && /usr/bin/env echo "9c44f390995d1a44d2bb1701e6457e37627ea158" > REVISION
+  INFO [3e277a63] Finished in 0.045 seconds with exit status 0 (successful).
+  INFO [977546b6] Running /usr/bin/env ln -s /var/www/hello-world/releases/20191218213025 /var/www/hello-world/releases/current as capistrano@172.16.175.45
+ DEBUG [977546b6] Command: /usr/bin/env ln -s /var/www/hello-world/releases/20191218213025 /var/www/hello-world/releases/current
+  INFO [977546b6] Finished in 0.046 seconds with exit status 0 (successful).
+  INFO [66dd9167] Running /usr/bin/env mv /var/www/hello-world/releases/current /var/www/hello-world as capistrano@172.16.175.45
+ DEBUG [66dd9167] Command: /usr/bin/env mv /var/www/hello-world/releases/current /var/www/hello-world
+  INFO [66dd9167] Finished in 0.047 seconds with exit status 0 (successful).
+ DEBUG [aa79ff5e] Running /usr/bin/env ls -x /var/www/hello-world/releases as capistrano@172.16.175.45
+ DEBUG [aa79ff5e] Command: /usr/bin/env ls -x /var/www/hello-world/releases
+ DEBUG [aa79ff5e] 	20191218212947	20191218213025
+ DEBUG [aa79ff5e] Finished in 0.046 seconds with exit status 0 (successful).
+ DEBUG [cf33fc16] Running if test ! -d /var/www/hello-world/releases; then echo "Directory does not exist '/var/www/hello-world/releases'" 1>&2; false; fi as capistrano@172.16.175.45
+ DEBUG [cf33fc16] Command: if test ! -d /var/www/hello-world/releases; then echo "Directory does not exist '/var/www/hello-world/releases'" 1>&2; false; fi
+ DEBUG [cf33fc16] Finished in 0.047 seconds with exit status 0 (successful).
+  INFO [f7ed8421] Running /usr/bin/env echo "Branch master (at 9c44f390995d1a44d2bb1701e6457e37627ea158) deployed as release 20191218213025 by root" >> /var/www/hello-world/revisions.log as capistrano@172.16.175.45
+ DEBUG [f7ed8421] Command: cd /var/www/hello-world/releases && /usr/bin/env echo "Branch master (at 9c44f390995d1a44d2bb1701e6457e37627ea158) deployed as release 20191218213025 by root" >> /var/www/hello-world/revisions.log
+  INFO [f7ed8421] Finished in 0.048 seconds with exit status 0 (successful).
+  INFO ---------------------------------------------------------------------------
+  INFO START 2019-12-18 21:31:36 +0000 cap production deploy
+  INFO ---------------------------------------------------------------------------
+  INFO [c0873db2] Running /usr/bin/env mkdir -p /tmp as capistrano@172.16.175.45
+ DEBUG [c0873db2] Command: /usr/bin/env mkdir -p /tmp
+  INFO [c0873db2] Finished in 0.700 seconds with exit status 0 (successful).
+ DEBUG Uploading /tmp/git-ssh-hello-world-production-root.sh 0.0%
+  INFO Uploading /tmp/git-ssh-hello-world-production-root.sh 100.0%
+  INFO [fc93de8a] Running /usr/bin/env chmod 700 /tmp/git-ssh-hello-world-production-root.sh as capistrano@172.16.175.45
+ DEBUG [fc93de8a] Command: /usr/bin/env chmod 700 /tmp/git-ssh-hello-world-production-root.sh
+  INFO [fc93de8a] Finished in 0.046 seconds with exit status 0 (successful).
+  INFO [eec3e671] Running /usr/bin/env git ls-remote git@github.com:grogowar/hello-world.git HEAD as capistrano@172.16.175.45
+ DEBUG [eec3e671] Command: ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-hello-world-production-root.sh" ; /usr/bin/env git ls-remote git@github.com:grogowar/hello-world.git HEAD )
+ DEBUG [eec3e671] 	9c44f390995d1a44d2bb1701e6457e37627ea158	HEAD
+  INFO [eec3e671] Finished in 1.379 seconds with exit status 0 (successful).
+  INFO [3bdd9aea] Running /usr/bin/env mkdir -p /var/www/hello-world/shared /var/www/hello-world/releases as capistrano@172.16.175.45
+ DEBUG [3bdd9aea] Command: /usr/bin/env mkdir -p /var/www/hello-world/shared /var/www/hello-world/releases
+  INFO [3bdd9aea] Finished in 0.005 seconds with exit status 0 (successful).
+ DEBUG [92d9ea8a] Running [ -f /var/www/hello-world/current/REVISION ] as capistrano@172.16.175.45
+ DEBUG [92d9ea8a] Command: [ -f /var/www/hello-world/current/REVISION ]
+ DEBUG [92d9ea8a] Finished in 0.043 seconds with exit status 0 (successful).
+ DEBUG [3919ee92] Running /usr/bin/env cat /var/www/hello-world/current/REVISION 2>/dev/null as capistrano@172.16.175.45
+ DEBUG [3919ee92] Command: /usr/bin/env cat /var/www/hello-world/current/REVISION 2>/dev/null
+ DEBUG [3919ee92] 	9c44f390995d1a44d2bb1701e6457e37627ea158
+ DEBUG [3919ee92] Finished in 0.045 seconds with exit status 0 (successful).
+ DEBUG [f61fb15f] Running [ -f /var/www/hello-world/repo/HEAD ] as capistrano@172.16.175.45
+ DEBUG [f61fb15f] Command: [ -f /var/www/hello-world/repo/HEAD ]
+ DEBUG [f61fb15f] Finished in 0.046 seconds with exit status 0 (successful).
+  INFO The repository mirror is at /var/www/hello-world/repo
+ DEBUG [8458dd3c] Running if test ! -d /var/www/hello-world/repo; then echo "Directory does not exist '/var/www/hello-world/repo'" 1>&2; false; fi as capistrano@172.16.175.45
+ DEBUG [8458dd3c] Command: if test ! -d /var/www/hello-world/repo; then echo "Directory does not exist '/var/www/hello-world/repo'" 1>&2; false; fi
+ DEBUG [8458dd3c] Finished in 0.047 seconds with exit status 0 (successful).
+  INFO [c1a7a6dd] Running /usr/bin/env git remote set-url origin git@github.com:grogowar/hello-world.git as capistrano@172.16.175.45
+ DEBUG [c1a7a6dd] Command: cd /var/www/hello-world/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-hello-world-production-root.sh" ; /usr/bin/env git remote set-url origin git@github.com:grogowar/hello-world.git )
+  INFO [c1a7a6dd] Finished in 0.049 seconds with exit status 0 (successful).
+  INFO [65331468] Running /usr/bin/env git remote update --prune as capistrano@172.16.175.45
+ DEBUG [65331468] Command: cd /var/www/hello-world/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-hello-world-production-root.sh" ; /usr/bin/env git remote update --prune )
+ DEBUG [65331468] 	Fetching origin
+  INFO [65331468] Finished in 1.359 seconds with exit status 0 (successful).
+ DEBUG [1a58c3d1] Running if test ! -d /var/www/hello-world/repo; then echo "Directory does not exist '/var/www/hello-world/repo'" 1>&2; false; fi as capistrano@172.16.175.45
+ DEBUG [1a58c3d1] Command: if test ! -d /var/www/hello-world/repo; then echo "Directory does not exist '/var/www/hello-world/repo'" 1>&2; false; fi
+ DEBUG [1a58c3d1] Finished in 0.003 seconds with exit status 0 (successful).
+  INFO [356da396] Running /usr/bin/env mkdir -p /var/www/hello-world/releases/20191218213139 as capistrano@172.16.175.45
+ DEBUG [356da396] Command: cd /var/www/hello-world/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-hello-world-production-root.sh" ; /usr/bin/env mkdir -p /var/www/hello-world/releases/20191218213139 )
+  INFO [356da396] Finished in 0.045 seconds with exit status 0 (successful).
+  INFO [ce631300] Running /usr/bin/env git archive master | /usr/bin/env tar -x -f - -C /var/www/hello-world/releases/20191218213139 as capistrano@172.16.175.45
+ DEBUG [ce631300] Command: cd /var/www/hello-world/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-hello-world-production-root.sh" ; /usr/bin/env git archive master | /usr/bin/env tar -x -f - -C /var/www/hello-world/releases/20191218213139 )
+  INFO [ce631300] Finished in 0.050 seconds with exit status 0 (successful).
+ DEBUG [7aad1c84] Running if test ! -d /var/www/hello-world/repo; then echo "Directory does not exist '/var/www/hello-world/repo'" 1>&2; false; fi as capistrano@172.16.175.45
+ DEBUG [7aad1c84] Command: if test ! -d /var/www/hello-world/repo; then echo "Directory does not exist '/var/www/hello-world/repo'" 1>&2; false; fi
+ DEBUG [7aad1c84] Finished in 0.046 seconds with exit status 0 (successful).
+ DEBUG [f122de60] Running /usr/bin/env git rev-list --max-count=1 master as capistrano@172.16.175.45
+ DEBUG [f122de60] Command: cd /var/www/hello-world/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-hello-world-production-root.sh" ; /usr/bin/env git rev-list --max-count=1 master )
+ DEBUG [f122de60] 	9c44f390995d1a44d2bb1701e6457e37627ea158
+ DEBUG [f122de60] Finished in 0.046 seconds with exit status 0 (successful).
+ DEBUG [015074ab] Running if test ! -d /var/www/hello-world/releases/20191218213139; then echo "Directory does not exist '/var/www/hello-world/releases/20191218213139'" 1>&2; false; fi as capistrano@172.16.175.45
+ DEBUG [015074ab] Command: if test ! -d /var/www/hello-world/releases/20191218213139; then echo "Directory does not exist '/var/www/hello-world/releases/20191218213139'" 1>&2; false; fi
+ DEBUG [015074ab] Finished in 0.045 seconds with exit status 0 (successful).
+  INFO [2547ac59] Running /usr/bin/env echo "9c44f390995d1a44d2bb1701e6457e37627ea158" > REVISION as capistrano@172.16.175.45
+ DEBUG [2547ac59] Command: cd /var/www/hello-world/releases/20191218213139 && /usr/bin/env echo "9c44f390995d1a44d2bb1701e6457e37627ea158" > REVISION
+  INFO [2547ac59] Finished in 0.045 seconds with exit status 0 (successful).
+  INFO [e4135f9d] Running /usr/bin/env ln -s /var/www/hello-world/releases/20191218213139 /var/www/hello-world/releases/current as capistrano@172.16.175.45
+ DEBUG [e4135f9d] Command: /usr/bin/env ln -s /var/www/hello-world/releases/20191218213139 /var/www/hello-world/releases/current
+  INFO [e4135f9d] Finished in 0.045 seconds with exit status 0 (successful).
+  INFO [9e0ee3be] Running /usr/bin/env mv /var/www/hello-world/releases/current /var/www/hello-world as capistrano@172.16.175.45
+ DEBUG [9e0ee3be] Command: /usr/bin/env mv /var/www/hello-world/releases/current /var/www/hello-world
+  INFO [9e0ee3be] Finished in 0.047 seconds with exit status 0 (successful).
+ DEBUG [f5b46dac] Running /usr/bin/env ls -x /var/www/hello-world/releases as capistrano@172.16.175.45
+ DEBUG [f5b46dac] Command: /usr/bin/env ls -x /var/www/hello-world/releases
+ DEBUG [f5b46dac] 	20191218212947	20191218213025	20191218213139
+ DEBUG [f5b46dac] Finished in 0.047 seconds with exit status 0 (successful).
+ DEBUG [2c078d64] Running if test ! -d /var/www/hello-world/releases; then echo "Directory does not exist '/var/www/hello-world/releases'" 1>&2; false; fi as capistrano@172.16.175.45
+ DEBUG [2c078d64] Command: if test ! -d /var/www/hello-world/releases; then echo "Directory does not exist '/var/www/hello-world/releases'" 1>&2; false; fi
+ DEBUG [2c078d64] Finished in 0.046 seconds with exit status 0 (successful).
+  INFO [3b5f6d9b] Running /usr/bin/env echo "Branch master (at 9c44f390995d1a44d2bb1701e6457e37627ea158) deployed as release 20191218213139 by root" >> /var/www/hello-world/revisions.log as capistrano@172.16.175.45
+ DEBUG [3b5f6d9b] Command: cd /var/www/hello-world/releases && /usr/bin/env echo "Branch master (at 9c44f390995d1a44d2bb1701e6457e37627ea158) deployed as release 20191218213139 by root" >> /var/www/hello-world/revisions.log
+  INFO [3b5f6d9b] Finished in 0.045 seconds with exit status 0 (successful).
+  INFO ---------------------------------------------------------------------------
+  INFO START 2019-12-18 21:31:44 +0000 cap production deploy
+  INFO ---------------------------------------------------------------------------
+  INFO [52f143be] Running /usr/bin/env mkdir -p /tmp as capistrano@172.16.175.45
+ DEBUG [52f143be] Command: /usr/bin/env mkdir -p /tmp
+  INFO [52f143be] Finished in 0.699 seconds with exit status 0 (successful).
+ DEBUG Uploading /tmp/git-ssh-hello-world-production-root.sh 0.0%
+  INFO Uploading /tmp/git-ssh-hello-world-production-root.sh 100.0%
+  INFO [25a003e1] Running /usr/bin/env chmod 700 /tmp/git-ssh-hello-world-production-root.sh as capistrano@172.16.175.45
+ DEBUG [25a003e1] Command: /usr/bin/env chmod 700 /tmp/git-ssh-hello-world-production-root.sh
+  INFO [25a003e1] Finished in 0.046 seconds with exit status 0 (successful).
+  INFO [ae0dfd15] Running /usr/bin/env git ls-remote git@github.com:grogowar/hello-world.git HEAD as capistrano@172.16.175.45
+ DEBUG [ae0dfd15] Command: ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-hello-world-production-root.sh" ; /usr/bin/env git ls-remote git@github.com:grogowar/hello-world.git HEAD )
+ DEBUG [ae0dfd15] 	9c44f390995d1a44d2bb1701e6457e37627ea158	HEAD
+  INFO [ae0dfd15] Finished in 1.369 seconds with exit status 0 (successful).
+  INFO [8f2e1f45] Running /usr/bin/env mkdir -p /var/www/hello-world/shared /var/www/hello-world/releases as capistrano@172.16.175.45
+ DEBUG [8f2e1f45] Command: /usr/bin/env mkdir -p /var/www/hello-world/shared /var/www/hello-world/releases
+  INFO [8f2e1f45] Finished in 0.005 seconds with exit status 0 (successful).
+ DEBUG [7a066ab6] Running [ -f /var/www/hello-world/current/REVISION ] as capistrano@172.16.175.45
+ DEBUG [7a066ab6] Command: [ -f /var/www/hello-world/current/REVISION ]
+ DEBUG [7a066ab6] Finished in 0.045 seconds with exit status 0 (successful).
+ DEBUG [932c22e7] Running /usr/bin/env cat /var/www/hello-world/current/REVISION 2>/dev/null as capistrano@172.16.175.45
+ DEBUG [932c22e7] Command: /usr/bin/env cat /var/www/hello-world/current/REVISION 2>/dev/null
+ DEBUG [932c22e7] 	9c44f390995d1a44d2bb1701e6457e37627ea158
+ DEBUG [932c22e7] Finished in 0.048 seconds with exit status 0 (successful).
+ DEBUG [656e81d4] Running [ -f /var/www/hello-world/repo/HEAD ] as capistrano@172.16.175.45
+ DEBUG [656e81d4] Command: [ -f /var/www/hello-world/repo/HEAD ]
+ DEBUG [656e81d4] Finished in 0.045 seconds with exit status 0 (successful).
+  INFO The repository mirror is at /var/www/hello-world/repo
+ DEBUG [faaa4e48] Running if test ! -d /var/www/hello-world/repo; then echo "Directory does not exist '/var/www/hello-world/repo'" 1>&2; false; fi as capistrano@172.16.175.45
+ DEBUG [faaa4e48] Command: if test ! -d /var/www/hello-world/repo; then echo "Directory does not exist '/var/www/hello-world/repo'" 1>&2; false; fi
+ DEBUG [faaa4e48] Finished in 0.043 seconds with exit status 0 (successful).
+  INFO [58a1a55d] Running /usr/bin/env git remote set-url origin git@github.com:grogowar/hello-world.git as capistrano@172.16.175.45
+ DEBUG [58a1a55d] Command: cd /var/www/hello-world/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-hello-world-production-root.sh" ; /usr/bin/env git remote set-url origin git@github.com:grogowar/hello-world.git )
+  INFO [58a1a55d] Finished in 0.049 seconds with exit status 0 (successful).
+  INFO [0cb8ea57] Running /usr/bin/env git remote update --prune as capistrano@172.16.175.45
+ DEBUG [0cb8ea57] Command: cd /var/www/hello-world/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-hello-world-production-root.sh" ; /usr/bin/env git remote update --prune )
+ DEBUG [0cb8ea57] 	Fetching origin
+  INFO [0cb8ea57] Finished in 1.360 seconds with exit status 0 (successful).
+ DEBUG [d047d083] Running if test ! -d /var/www/hello-world/repo; then echo "Directory does not exist '/var/www/hello-world/repo'" 1>&2; false; fi as capistrano@172.16.175.45
+ DEBUG [d047d083] Command: if test ! -d /var/www/hello-world/repo; then echo "Directory does not exist '/var/www/hello-world/repo'" 1>&2; false; fi
+ DEBUG [d047d083] Finished in 0.003 seconds with exit status 0 (successful).
+  INFO [78657cb0] Running /usr/bin/env mkdir -p /var/www/hello-world/releases/20191218213146 as capistrano@172.16.175.45
+ DEBUG [78657cb0] Command: cd /var/www/hello-world/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-hello-world-production-root.sh" ; /usr/bin/env mkdir -p /var/www/hello-world/releases/20191218213146 )
+  INFO [78657cb0] Finished in 0.049 seconds with exit status 0 (successful).
+  INFO [df94b57b] Running /usr/bin/env git archive master | /usr/bin/env tar -x -f - -C /var/www/hello-world/releases/20191218213146 as capistrano@172.16.175.45
+ DEBUG [df94b57b] Command: cd /var/www/hello-world/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-hello-world-production-root.sh" ; /usr/bin/env git archive master | /usr/bin/env tar -x -f - -C /var/www/hello-world/releases/20191218213146 )
+  INFO [df94b57b] Finished in 0.050 seconds with exit status 0 (successful).
+ DEBUG [4a4e3444] Running if test ! -d /var/www/hello-world/repo; then echo "Directory does not exist '/var/www/hello-world/repo'" 1>&2; false; fi as capistrano@172.16.175.45
+ DEBUG [4a4e3444] Command: if test ! -d /var/www/hello-world/repo; then echo "Directory does not exist '/var/www/hello-world/repo'" 1>&2; false; fi
+ DEBUG [4a4e3444] Finished in 0.046 seconds with exit status 0 (successful).
+ DEBUG [87f8740b] Running /usr/bin/env git rev-list --max-count=1 master as capistrano@172.16.175.45
+ DEBUG [87f8740b] Command: cd /var/www/hello-world/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-hello-world-production-root.sh" ; /usr/bin/env git rev-list --max-count=1 master )
+ DEBUG [87f8740b] 	9c44f390995d1a44d2bb1701e6457e37627ea158
+ DEBUG [87f8740b] Finished in 0.049 seconds with exit status 0 (successful).
+ DEBUG [42a493c2] Running if test ! -d /var/www/hello-world/releases/20191218213146; then echo "Directory does not exist '/var/www/hello-world/releases/20191218213146'" 1>&2; false; fi as capistrano@172.16.175.45
+ DEBUG [42a493c2] Command: if test ! -d /var/www/hello-world/releases/20191218213146; then echo "Directory does not exist '/var/www/hello-world/releases/20191218213146'" 1>&2; false; fi
+ DEBUG [42a493c2] Finished in 0.045 seconds with exit status 0 (successful).
+  INFO [f30a770f] Running /usr/bin/env echo "9c44f390995d1a44d2bb1701e6457e37627ea158" > REVISION as capistrano@172.16.175.45
+ DEBUG [f30a770f] Command: cd /var/www/hello-world/releases/20191218213146 && /usr/bin/env echo "9c44f390995d1a44d2bb1701e6457e37627ea158" > REVISION
+  INFO [f30a770f] Finished in 0.045 seconds with exit status 0 (successful).
+  INFO [0dbcffbb] Running /usr/bin/env ln -s /var/www/hello-world/releases/20191218213146 /var/www/hello-world/releases/current as capistrano@172.16.175.45
+ DEBUG [0dbcffbb] Command: /usr/bin/env ln -s /var/www/hello-world/releases/20191218213146 /var/www/hello-world/releases/current
+  INFO [0dbcffbb] Finished in 0.046 seconds with exit status 0 (successful).
+  INFO [c8417fc1] Running /usr/bin/env mv /var/www/hello-world/releases/current /var/www/hello-world as capistrano@172.16.175.45
+ DEBUG [c8417fc1] Command: /usr/bin/env mv /var/www/hello-world/releases/current /var/www/hello-world
+  INFO [c8417fc1] Finished in 0.048 seconds with exit status 0 (successful).
+ DEBUG [eb16478a] Running /usr/bin/env ls -x /var/www/hello-world/releases as capistrano@172.16.175.45
+ DEBUG [eb16478a] Command: /usr/bin/env ls -x /var/www/hello-world/releases
+ DEBUG [eb16478a] 	20191218212947	20191218213025	20191218213139	20191218213146
+ DEBUG [eb16478a] Finished in 0.047 seconds with exit status 0 (successful).
+ DEBUG [984b838a] Running if test ! -d /var/www/hello-world/releases; then echo "Directory does not exist '/var/www/hello-world/releases'" 1>&2; false; fi as capistrano@172.16.175.45
+ DEBUG [984b838a] Command: if test ! -d /var/www/hello-world/releases; then echo "Directory does not exist '/var/www/hello-world/releases'" 1>&2; false; fi
+ DEBUG [984b838a] Finished in 0.045 seconds with exit status 0 (successful).
+  INFO [d25b0dd6] Running /usr/bin/env echo "Branch master (at 9c44f390995d1a44d2bb1701e6457e37627ea158) deployed as release 20191218213146 by root" >> /var/www/hello-world/revisions.log as capistrano@172.16.175.45
+ DEBUG [d25b0dd6] Command: cd /var/www/hello-world/releases && /usr/bin/env echo "Branch master (at 9c44f390995d1a44d2bb1701e6457e37627ea158) deployed as release 20191218213146 by root" >> /var/www/hello-world/revisions.log
+  INFO [d25b0dd6] Finished in 0.044 seconds with exit status 0 (successful).
+  INFO ---------------------------------------------------------------------------
+  INFO START 2019-12-18 21:31:52 +0000 cap production deploy
+  INFO ---------------------------------------------------------------------------
+  INFO [4666bc2a] Running /usr/bin/env mkdir -p /tmp as capistrano@172.16.175.45
+ DEBUG [4666bc2a] Command: /usr/bin/env mkdir -p /tmp
+  INFO [4666bc2a] Finished in 0.702 seconds with exit status 0 (successful).
+ DEBUG Uploading /tmp/git-ssh-hello-world-production-root.sh 0.0%
+  INFO Uploading /tmp/git-ssh-hello-world-production-root.sh 100.0%
+  INFO [b3c641e1] Running /usr/bin/env chmod 700 /tmp/git-ssh-hello-world-production-root.sh as capistrano@172.16.175.45
+ DEBUG [b3c641e1] Command: /usr/bin/env chmod 700 /tmp/git-ssh-hello-world-production-root.sh
+  INFO [b3c641e1] Finished in 0.046 seconds with exit status 0 (successful).
+  INFO [6e3c56a1] Running /usr/bin/env git ls-remote git@github.com:grogowar/hello-world.git HEAD as capistrano@172.16.175.45
+ DEBUG [6e3c56a1] Command: ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-hello-world-production-root.sh" ; /usr/bin/env git ls-remote git@github.com:grogowar/hello-world.git HEAD )
+ DEBUG [6e3c56a1] 	9c44f390995d1a44d2bb1701e6457e37627ea158	HEAD
+  INFO [6e3c56a1] Finished in 1.356 seconds with exit status 0 (successful).
+  INFO [5c79fcc8] Running /usr/bin/env mkdir -p /var/www/hello-world/shared /var/www/hello-world/releases as capistrano@172.16.175.45
+ DEBUG [5c79fcc8] Command: /usr/bin/env mkdir -p /var/www/hello-world/shared /var/www/hello-world/releases
+  INFO [5c79fcc8] Finished in 0.005 seconds with exit status 0 (successful).
+ DEBUG [a3c99820] Running [ -f /var/www/hello-world/current/REVISION ] as capistrano@172.16.175.45
+ DEBUG [a3c99820] Command: [ -f /var/www/hello-world/current/REVISION ]
+ DEBUG [a3c99820] Finished in 0.046 seconds with exit status 0 (successful).
+ DEBUG [95b24779] Running /usr/bin/env cat /var/www/hello-world/current/REVISION 2>/dev/null as capistrano@172.16.175.45
+ DEBUG [95b24779] Command: /usr/bin/env cat /var/www/hello-world/current/REVISION 2>/dev/null
+ DEBUG [95b24779] 	9c44f390995d1a44d2bb1701e6457e37627ea158
+ DEBUG [95b24779] Finished in 0.048 seconds with exit status 0 (successful).
+ DEBUG [11a03e06] Running [ -f /var/www/hello-world/repo/HEAD ] as capistrano@172.16.175.45
+ DEBUG [11a03e06] Command: [ -f /var/www/hello-world/repo/HEAD ]
+ DEBUG [11a03e06] Finished in 0.045 seconds with exit status 0 (successful).
+  INFO The repository mirror is at /var/www/hello-world/repo
+ DEBUG [1dfd0fa3] Running if test ! -d /var/www/hello-world/repo; then echo "Directory does not exist '/var/www/hello-world/repo'" 1>&2; false; fi as capistrano@172.16.175.45
+ DEBUG [1dfd0fa3] Command: if test ! -d /var/www/hello-world/repo; then echo "Directory does not exist '/var/www/hello-world/repo'" 1>&2; false; fi
+ DEBUG [1dfd0fa3] Finished in 0.043 seconds with exit status 0 (successful).
+  INFO [0c2a649f] Running /usr/bin/env git remote set-url origin git@github.com:grogowar/hello-world.git as capistrano@172.16.175.45
+ DEBUG [0c2a649f] Command: cd /var/www/hello-world/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-hello-world-production-root.sh" ; /usr/bin/env git remote set-url origin git@github.com:grogowar/hello-world.git )
+  INFO [0c2a649f] Finished in 0.049 seconds with exit status 0 (successful).
+  INFO [14d33197] Running /usr/bin/env git remote update --prune as capistrano@172.16.175.45
+ DEBUG [14d33197] Command: cd /var/www/hello-world/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-hello-world-production-root.sh" ; /usr/bin/env git remote update --prune )
+ DEBUG [14d33197] 	Fetching origin
+  INFO [14d33197] Finished in 1.352 seconds with exit status 0 (successful).
+ DEBUG [b87eaa37] Running if test ! -d /var/www/hello-world/repo; then echo "Directory does not exist '/var/www/hello-world/repo'" 1>&2; false; fi as capistrano@172.16.175.45
+ DEBUG [b87eaa37] Command: if test ! -d /var/www/hello-world/repo; then echo "Directory does not exist '/var/www/hello-world/repo'" 1>&2; false; fi
+ DEBUG [b87eaa37] Finished in 0.003 seconds with exit status 0 (successful).
+  INFO [7e644992] Running /usr/bin/env mkdir -p /var/www/hello-world/releases/20191218213155 as capistrano@172.16.175.45
+ DEBUG [7e644992] Command: cd /var/www/hello-world/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-hello-world-production-root.sh" ; /usr/bin/env mkdir -p /var/www/hello-world/releases/20191218213155 )
+  INFO [7e644992] Finished in 0.048 seconds with exit status 0 (successful).
+  INFO [91a763ce] Running /usr/bin/env git archive master | /usr/bin/env tar -x -f - -C /var/www/hello-world/releases/20191218213155 as capistrano@172.16.175.45
+ DEBUG [91a763ce] Command: cd /var/www/hello-world/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-hello-world-production-root.sh" ; /usr/bin/env git archive master | /usr/bin/env tar -x -f - -C /var/www/hello-world/releases/20191218213155 )
+  INFO [91a763ce] Finished in 0.050 seconds with exit status 0 (successful).
+ DEBUG [da211536] Running if test ! -d /var/www/hello-world/repo; then echo "Directory does not exist '/var/www/hello-world/repo'" 1>&2; false; fi as capistrano@172.16.175.45
+ DEBUG [da211536] Command: if test ! -d /var/www/hello-world/repo; then echo "Directory does not exist '/var/www/hello-world/repo'" 1>&2; false; fi
+ DEBUG [da211536] Finished in 0.046 seconds with exit status 0 (successful).
+ DEBUG [6ff5593d] Running /usr/bin/env git rev-list --max-count=1 master as capistrano@172.16.175.45
+ DEBUG [6ff5593d] Command: cd /var/www/hello-world/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-hello-world-production-root.sh" ; /usr/bin/env git rev-list --max-count=1 master )
+ DEBUG [6ff5593d] 	9c44f390995d1a44d2bb1701e6457e37627ea158
+ DEBUG [6ff5593d] Finished in 0.046 seconds with exit status 0 (successful).
+ DEBUG [96772009] Running if test ! -d /var/www/hello-world/releases/20191218213155; then echo "Directory does not exist '/var/www/hello-world/releases/20191218213155'" 1>&2; false; fi as capistrano@172.16.175.45
+ DEBUG [96772009] Command: if test ! -d /var/www/hello-world/releases/20191218213155; then echo "Directory does not exist '/var/www/hello-world/releases/20191218213155'" 1>&2; false; fi
+ DEBUG [96772009] Finished in 0.045 seconds with exit status 0 (successful).
+  INFO [bb3df842] Running /usr/bin/env echo "9c44f390995d1a44d2bb1701e6457e37627ea158" > REVISION as capistrano@172.16.175.45
+ DEBUG [bb3df842] Command: cd /var/www/hello-world/releases/20191218213155 && /usr/bin/env echo "9c44f390995d1a44d2bb1701e6457e37627ea158" > REVISION
+  INFO [bb3df842] Finished in 0.044 seconds with exit status 0 (successful).
+  INFO [039bdf03] Running /usr/bin/env ln -s /var/www/hello-world/releases/20191218213155 /var/www/hello-world/releases/current as capistrano@172.16.175.45
+ DEBUG [039bdf03] Command: /usr/bin/env ln -s /var/www/hello-world/releases/20191218213155 /var/www/hello-world/releases/current
+  INFO [039bdf03] Finished in 0.046 seconds with exit status 0 (successful).
+  INFO [0daed03c] Running /usr/bin/env mv /var/www/hello-world/releases/current /var/www/hello-world as capistrano@172.16.175.45
+ DEBUG [0daed03c] Command: /usr/bin/env mv /var/www/hello-world/releases/current /var/www/hello-world
+  INFO [0daed03c] Finished in 0.047 seconds with exit status 0 (successful).
+ DEBUG [40b47391] Running /usr/bin/env ls -x /var/www/hello-world/releases as capistrano@172.16.175.45
+ DEBUG [40b47391] Command: /usr/bin/env ls -x /var/www/hello-world/releases
+ DEBUG [40b47391] 	20191218212947	20191218213025	20191218213139	20191218213146	20191218213155
+ DEBUG [40b47391] Finished in 0.047 seconds with exit status 0 (successful).
+  INFO Keeping 5 of 5 deployed releases on 172.16.175.45
+ DEBUG [73d98916] Running [ -d /var/www/hello-world/current ] as capistrano@172.16.175.45
+ DEBUG [73d98916] Command: [ -d /var/www/hello-world/current ]
+ DEBUG [73d98916] Finished in 0.046 seconds with exit status 0 (successful).
+ DEBUG [5ed7b079] Running /usr/bin/env readlink /var/www/hello-world/current as capistrano@172.16.175.45
+ DEBUG [5ed7b079] Command: /usr/bin/env readlink /var/www/hello-world/current
+ DEBUG [5ed7b079] 	/var/www/hello-world/releases/20191218213155
+ DEBUG [5ed7b079] Finished in 0.044 seconds with exit status 0 (successful).
+  INFO No old releases (keeping newest 5) on 172.16.175.45
+ DEBUG [24d6d3cf] Running if test ! -d /var/www/hello-world/releases; then echo "Directory does not exist '/var/www/hello-world/releases'" 1>&2; false; fi as capistrano@172.16.175.45
+ DEBUG [24d6d3cf] Command: if test ! -d /var/www/hello-world/releases; then echo "Directory does not exist '/var/www/hello-world/releases'" 1>&2; false; fi
+ DEBUG [24d6d3cf] Finished in 0.046 seconds with exit status 0 (successful).
+  INFO [36e6dd1a] Running /usr/bin/env echo "Branch master (at 9c44f390995d1a44d2bb1701e6457e37627ea158) deployed as release 20191218213155 by root" >> /var/www/hello-world/revisions.log as capistrano@172.16.175.45
+ DEBUG [36e6dd1a] Command: cd /var/www/hello-world/releases && /usr/bin/env echo "Branch master (at 9c44f390995d1a44d2bb1701e6457e37627ea158) deployed as release 20191218213155 by root" >> /var/www/hello-world/revisions.log
+  INFO [36e6dd1a] Finished in 0.044 seconds with exit status 0 (successful).
+  INFO ---------------------------------------------------------------------------
+  INFO START 2019-12-18 21:32:16 +0000 cap production deploy
+  INFO ---------------------------------------------------------------------------
+  INFO [34ae97f8] Running /usr/bin/env mkdir -p /tmp as capistrano@172.16.175.45
+ DEBUG [34ae97f8] Command: /usr/bin/env mkdir -p /tmp
+  INFO [34ae97f8] Finished in 0.698 seconds with exit status 0 (successful).
+ DEBUG Uploading /tmp/git-ssh-hello-world-production-root.sh 0.0%
+  INFO Uploading /tmp/git-ssh-hello-world-production-root.sh 100.0%
+  INFO [d5f2106b] Running /usr/bin/env chmod 700 /tmp/git-ssh-hello-world-production-root.sh as capistrano@172.16.175.45
+ DEBUG [d5f2106b] Command: /usr/bin/env chmod 700 /tmp/git-ssh-hello-world-production-root.sh
+  INFO [d5f2106b] Finished in 0.046 seconds with exit status 0 (successful).
+  INFO [2d39ef32] Running /usr/bin/env git ls-remote git@github.com:grogowar/hello-world.git HEAD as capistrano@172.16.175.45
+ DEBUG [2d39ef32] Command: ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-hello-world-production-root.sh" ; /usr/bin/env git ls-remote git@github.com:grogowar/hello-world.git HEAD )
+ DEBUG [2d39ef32] 	9c44f390995d1a44d2bb1701e6457e37627ea158	HEAD
+  INFO [2d39ef32] Finished in 1.349 seconds with exit status 0 (successful).
+  INFO [cb2a2e0e] Running /usr/bin/env mkdir -p /var/www/hello-world/shared /var/www/hello-world/releases as capistrano@172.16.175.45
+ DEBUG [cb2a2e0e] Command: /usr/bin/env mkdir -p /var/www/hello-world/shared /var/www/hello-world/releases
+  INFO [cb2a2e0e] Finished in 0.004 seconds with exit status 0 (successful).
+ DEBUG [66f9b333] Running [ -f /var/www/hello-world/current/REVISION ] as capistrano@172.16.175.45
+ DEBUG [66f9b333] Command: [ -f /var/www/hello-world/current/REVISION ]
+ DEBUG [66f9b333] Finished in 0.046 seconds with exit status 0 (successful).
+ DEBUG [321eecc4] Running /usr/bin/env cat /var/www/hello-world/current/REVISION 2>/dev/null as capistrano@172.16.175.45
+ DEBUG [321eecc4] Command: /usr/bin/env cat /var/www/hello-world/current/REVISION 2>/dev/null
+ DEBUG [321eecc4] 	9c44f390995d1a44d2bb1701e6457e37627ea158
+ DEBUG [321eecc4] Finished in 0.049 seconds with exit status 0 (successful).
+ DEBUG [5c45efaf] Running [ -f /var/www/hello-world/repo/HEAD ] as capistrano@172.16.175.45
+ DEBUG [5c45efaf] Command: [ -f /var/www/hello-world/repo/HEAD ]
+ DEBUG [5c45efaf] Finished in 0.045 seconds with exit status 0 (successful).
+  INFO The repository mirror is at /var/www/hello-world/repo
+ DEBUG [8aa1493a] Running if test ! -d /var/www/hello-world/repo; then echo "Directory does not exist '/var/www/hello-world/repo'" 1>&2; false; fi as capistrano@172.16.175.45
+ DEBUG [8aa1493a] Command: if test ! -d /var/www/hello-world/repo; then echo "Directory does not exist '/var/www/hello-world/repo'" 1>&2; false; fi
+ DEBUG [8aa1493a] Finished in 0.043 seconds with exit status 0 (successful).
+  INFO [907d9fe8] Running /usr/bin/env git remote set-url origin git@github.com:grogowar/hello-world.git as capistrano@172.16.175.45
+ DEBUG [907d9fe8] Command: cd /var/www/hello-world/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-hello-world-production-root.sh" ; /usr/bin/env git remote set-url origin git@github.com:grogowar/hello-world.git )
+  INFO [907d9fe8] Finished in 0.050 seconds with exit status 0 (successful).
+  INFO [1faf5c1c] Running /usr/bin/env git remote update --prune as capistrano@172.16.175.45
+ DEBUG [1faf5c1c] Command: cd /var/www/hello-world/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-hello-world-production-root.sh" ; /usr/bin/env git remote update --prune )
+ DEBUG [1faf5c1c] 	Fetching origin
+  INFO [1faf5c1c] Finished in 1.351 seconds with exit status 0 (successful).
+ DEBUG [36d90b99] Running if test ! -d /var/www/hello-world/repo; then echo "Directory does not exist '/var/www/hello-world/repo'" 1>&2; false; fi as capistrano@172.16.175.45
+ DEBUG [36d90b99] Command: if test ! -d /var/www/hello-world/repo; then echo "Directory does not exist '/var/www/hello-world/repo'" 1>&2; false; fi
+ DEBUG [36d90b99] Finished in 0.003 seconds with exit status 0 (successful).
+  INFO [c8880c10] Running /usr/bin/env mkdir -p /var/www/hello-world/releases/20191218213218 as capistrano@172.16.175.45
+ DEBUG [c8880c10] Command: cd /var/www/hello-world/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-hello-world-production-root.sh" ; /usr/bin/env mkdir -p /var/www/hello-world/releases/20191218213218 )
+  INFO [c8880c10] Finished in 0.046 seconds with exit status 0 (successful).
+  INFO [f7a373a4] Running /usr/bin/env git archive master | /usr/bin/env tar -x -f - -C /var/www/hello-world/releases/20191218213218 as capistrano@172.16.175.45
+ DEBUG [f7a373a4] Command: cd /var/www/hello-world/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-hello-world-production-root.sh" ; /usr/bin/env git archive master | /usr/bin/env tar -x -f - -C /var/www/hello-world/releases/20191218213218 )
+  INFO [f7a373a4] Finished in 0.050 seconds with exit status 0 (successful).
+ DEBUG [ffe8d459] Running if test ! -d /var/www/hello-world/repo; then echo "Directory does not exist '/var/www/hello-world/repo'" 1>&2; false; fi as capistrano@172.16.175.45
+ DEBUG [ffe8d459] Command: if test ! -d /var/www/hello-world/repo; then echo "Directory does not exist '/var/www/hello-world/repo'" 1>&2; false; fi
+ DEBUG [ffe8d459] Finished in 0.047 seconds with exit status 0 (successful).
+ DEBUG [c49cba84] Running /usr/bin/env git rev-list --max-count=1 master as capistrano@172.16.175.45
+ DEBUG [c49cba84] Command: cd /var/www/hello-world/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-hello-world-production-root.sh" ; /usr/bin/env git rev-list --max-count=1 master )
+ DEBUG [c49cba84] 	9c44f390995d1a44d2bb1701e6457e37627ea158
+ DEBUG [c49cba84] Finished in 0.050 seconds with exit status 0 (successful).
+ DEBUG [160a689c] Running if test ! -d /var/www/hello-world/releases/20191218213218; then echo "Directory does not exist '/var/www/hello-world/releases/20191218213218'" 1>&2; false; fi as capistrano@172.16.175.45
+ DEBUG [160a689c] Command: if test ! -d /var/www/hello-world/releases/20191218213218; then echo "Directory does not exist '/var/www/hello-world/releases/20191218213218'" 1>&2; false; fi
+ DEBUG [160a689c] Finished in 0.044 seconds with exit status 0 (successful).
+  INFO [a286fb38] Running /usr/bin/env echo "9c44f390995d1a44d2bb1701e6457e37627ea158" > REVISION as capistrano@172.16.175.45
+ DEBUG [a286fb38] Command: cd /var/www/hello-world/releases/20191218213218 && /usr/bin/env echo "9c44f390995d1a44d2bb1701e6457e37627ea158" > REVISION
+  INFO [a286fb38] Finished in 0.045 seconds with exit status 0 (successful).
+  INFO [8fac5265] Running /usr/bin/env ln -s /var/www/hello-world/releases/20191218213218 /var/www/hello-world/releases/current as capistrano@172.16.175.45
+ DEBUG [8fac5265] Command: /usr/bin/env ln -s /var/www/hello-world/releases/20191218213218 /var/www/hello-world/releases/current
+  INFO [8fac5265] Finished in 0.045 seconds with exit status 0 (successful).
+  INFO [5ab93f57] Running /usr/bin/env mv /var/www/hello-world/releases/current /var/www/hello-world as capistrano@172.16.175.45
+ DEBUG [5ab93f57] Command: /usr/bin/env mv /var/www/hello-world/releases/current /var/www/hello-world
+  INFO [5ab93f57] Finished in 0.047 seconds with exit status 0 (successful).
+ DEBUG [3022550e] Running /usr/bin/env ls -x /var/www/hello-world/releases as capistrano@172.16.175.45
+ DEBUG [3022550e] Command: /usr/bin/env ls -x /var/www/hello-world/releases
+ DEBUG [3022550e] 	20191218212947	20191218213025	20191218213139	20191218213146	20191218213155
+20191218213218
+ DEBUG [3022550e] Finished in 0.047 seconds with exit status 0 (successful).
+  INFO Keeping 5 of 6 deployed releases on 172.16.175.45
+ DEBUG [fa1216da] Running [ -d /var/www/hello-world/current ] as capistrano@172.16.175.45
+ DEBUG [fa1216da] Command: [ -d /var/www/hello-world/current ]
+ DEBUG [fa1216da] Finished in 0.046 seconds with exit status 0 (successful).
+ DEBUG [e0f17174] Running /usr/bin/env readlink /var/www/hello-world/current as capistrano@172.16.175.45
+ DEBUG [e0f17174] Command: /usr/bin/env readlink /var/www/hello-world/current
+ DEBUG [e0f17174] 	/var/www/hello-world/releases/20191218213218
+ DEBUG [e0f17174] Finished in 0.048 seconds with exit status 0 (successful).
+  INFO [26150bef] Running /usr/bin/env rm -rf /var/www/hello-world/releases/20191218212947 as capistrano@172.16.175.45
+ DEBUG [26150bef] Command: /usr/bin/env rm -rf /var/www/hello-world/releases/20191218212947
+  INFO [26150bef] Finished in 0.048 seconds with exit status 0 (successful).
+ DEBUG [be345e5e] Running if test ! -d /var/www/hello-world/releases; then echo "Directory does not exist '/var/www/hello-world/releases'" 1>&2; false; fi as capistrano@172.16.175.45
+ DEBUG [be345e5e] Command: if test ! -d /var/www/hello-world/releases; then echo "Directory does not exist '/var/www/hello-world/releases'" 1>&2; false; fi
+ DEBUG [be345e5e] Finished in 0.046 seconds with exit status 0 (successful).
+  INFO [fade8e18] Running /usr/bin/env echo "Branch master (at 9c44f390995d1a44d2bb1701e6457e37627ea158) deployed as release 20191218213218 by root" >> /var/www/hello-world/revisions.log as capistrano@172.16.175.45
+ DEBUG [fade8e18] Command: cd /var/www/hello-world/releases && /usr/bin/env echo "Branch master (at 9c44f390995d1a44d2bb1701e6457e37627ea158) deployed as release 20191218213218 by root" >> /var/www/hello-world/revisions.log
+  INFO [fade8e18] Finished in 0.048 seconds with exit status 0 (successful).
